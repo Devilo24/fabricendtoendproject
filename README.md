@@ -38,3 +38,16 @@ End-to-End Orchestration: Automates scheduling using Data Factory Pipelines
 📌 Pipeline Overview:
 ![image](https://github.com/user-attachments/assets/db9ea491-4550-4d92-88f1-82b3ded81937)
 
+📌 Power BI Dashboard Preview:
+![image](https://github.com/user-attachments/assets/56a9630a-3c35-41f2-9da8-74ffab2351e0)
+
+🛠️ Tech Stack
+🔹 Microsoft Fabric (OneLake, Data Factory, Synapse Analytics, Power BI)
+🔹 Azure Data Services (ADLS, Data Factory)
+🔹 Spark & SQL (Data Transformation)
+🔹 GitHub Actions / Azure DevOps (CI/CD Automation)
+
+🔧 Setup Instructions
+Pre-requisites
+✔ Azure Account with Fabric-enabled workspace
+✔ Basic knowledge of SQL & PySpark
