@@ -1,20 +1,40 @@
-# Introduction 
-TODO: Give a short introduction of your project. Let this section explain the objectives or the motivation behind this project. 
+📌 Microsoft Fabric LMS Analytics Project
+This project builds an end-to-end data pipeline in Microsoft Fabric for analyzing Learning Management System (LMS) data. It processes student demographics, course enrollments, learning preferences, and performance metrics using Microsoft Fabric components such as OneLake, Data Factory, Synapse Analytics, and Power BI. Additionally, it includes CI/CD automation for seamless deployment and updates.
 
-# Getting Started
-TODO: Guide users through getting your code up and running on their own system. In this section you can talk about:
-1.	Installation process
-2.	Software dependencies
-3.	Latest releases
-4.	API references
+📂 Project Structure
+fabricproject/
+│── 01.Raw to Landing.DataPipeline/       # Data pipeline for raw to landing transformation
+│── 01.Raw to Landing.Notebook/           # Notebook for processing raw data
+│── 02. Landing to Bronze.Notebook/       # Notebook for transforming landing data to bronze
+│── 03. Silver Transform.Notebook/        # Notebook for processing bronze to silver data
+│── 04. Gold Layer.Notebook/              # Notebook for final data transformation to gold
+│── End to End Orchestrate.DataPipeline/  # Orchestrated pipeline covering the full process
+│── LH_Bronze.Lakehouse/                  # Lakehouse for Bronze layer storage
+│── LH_Gold.Lakehouse/                    # Lakehouse for Gold layer storage
+│── LH_Silver.Lakehouse/                  # Lakehouse for Silver layer storage
+│── LMS_import.Report/                     # Power BI Report for student analytics
+│── LMS_import.SemanticModel/              # Semantic model for LMS import
+│── LMS_model.SemanticModel/               # Main LMS semantic model
+│── README.md                              # Project documentation
 
-# Build and Test
-TODO: Describe and show how to build your code and run the tests. 
+🚀 Features
+✅ Data Pipeline: Ingests, processes, and transforms LMS data from OneLake
+✅ Lakehouse & Data Warehouse: Stores structured, semi-structured, and unstructured data for analysis
+✅ CI/CD Integration: Automates deployment of Fabric workspaces, pipelines, and Power BI reports
+✅ Power BI Dashboards: Visualizes student performance, learning trends, and completion rates
+✅ Security & Access Control: Implements RBAC, OneLake access policies, and Row-Level Security (RLS)
 
-# Contribute
-TODO: Explain how other users and developers can contribute to make your code better. 
+📊 Data Processing Flow
+Raw → Landing: Ingests raw data from LMS into OneLake
 
-If you want to learn more about creating good readme files then refer the following [guidelines](https://docs.microsoft.com/en-us/azure/devops/repos/git/create-a-readme?view=azure-devops). You can also seek inspiration from the below readme files:
-- [ASP.NET Core](https://github.com/aspnet/Home)
-- [Visual Studio Code](https://github.com/Microsoft/vscode)
-- [Chakra Core](https://github.com/Microsoft/ChakraCore)
+Landing → Bronze: Cleans and stores structured data in the Bronze Lakehouse
+
+Bronze → Silver: Applies data transformations for analytics-ready data
+
+Silver → Gold: Aggregates final data with business logic in Gold Lakehouse
+
+End-to-End Orchestration: Automates scheduling using Data Factory Pipelines
+
+📌 Pipeline Overview:
+![image](https://github.com/user-attachments/assets/db9ea491-4550-4d92-88f1-82b3ded81937)
+
