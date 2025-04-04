@@ -1,0 +1,245 @@
+table fact_student_performance
+	lineageTag: dff26663-33f6-4e03-b97d-75ca024c9b39
+
+	column Student_ID
+		dataType: string
+		lineageTag: 4d7cbc40-125d-4f58-8c79-910d0e9235b5
+		summarizeBy: none
+		sourceColumn: Student_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Course_ID
+		dataType: string
+		lineageTag: 2d4eb471-25ba-4e32-bbc8-90199fa7356c
+		summarizeBy: none
+		sourceColumn: Course_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Enrollment_Date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 294db972-4ce5-456d-8e9e-1ec30d9464f4
+		summarizeBy: none
+		sourceColumn: Enrollment_Date
+
+		variation Variation
+			isDefault
+			relationship: 3ff12cc8-53e8-4a08-be72-6708970ebd0f
+			defaultHierarchy: LocalDateTable_e3567986-df95-4ee0-a701-012f5a05c2a3.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Completion_Date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: ec3cf027-5c80-4284-9997-66786893ca77
+		summarizeBy: none
+		sourceColumn: Completion_Date
+
+		variation Variation
+			isDefault
+			relationship: cb61e231-cb0e-463b-9e7a-99ec7539b863
+			defaultHierarchy: LocalDateTable_1ceab3b2-bfec-4fe5-9cff-5285fa5b7291.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Status
+		dataType: string
+		lineageTag: 7d82fc7f-147c-4c7f-bf1e-07cd3998ca26
+		summarizeBy: none
+		sourceColumn: Status
+
+		annotation SummarizationSetBy = Automatic
+
+	column Final_Grade
+		dataType: string
+		lineageTag: 29374e8d-2355-479d-bf7b-5168e043398e
+		summarizeBy: none
+		sourceColumn: Final_Grade
+
+		annotation SummarizationSetBy = Automatic
+
+	column Attendance_Rate
+		dataType: double
+		lineageTag: 0e0ff9d0-31cc-43c2-903c-1acdea61e1bd
+		summarizeBy: sum
+		sourceColumn: Attendance_Rate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Time_Spent_on_Course_hrs
+		dataType: double
+		lineageTag: 506a771a-3649-49e0-bc2a-206639850363
+		summarizeBy: sum
+		sourceColumn: Time_Spent_on_Course_hrs
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Assignments_Completed
+		dataType: int64
+		formatString: 0
+		lineageTag: ac41e182-85c6-4243-bae5-a416d60b73e8
+		summarizeBy: sum
+		sourceColumn: Assignments_Completed
+
+		annotation SummarizationSetBy = Automatic
+
+	column Quizzes_Completed
+		dataType: int64
+		formatString: 0
+		lineageTag: da61a8d6-57ff-4cb0-81d7-9e54085bc951
+		summarizeBy: sum
+		sourceColumn: Quizzes_Completed
+
+		annotation SummarizationSetBy = Automatic
+
+	column Forum_Posts
+		dataType: int64
+		formatString: 0
+		lineageTag: e4fc66e7-e136-4fa4-b21e-15d9add4e7a4
+		summarizeBy: sum
+		sourceColumn: Forum_Posts
+
+		annotation SummarizationSetBy = Automatic
+
+	column Messages_Sent
+		dataType: int64
+		formatString: 0
+		lineageTag: d1477af0-f477-41fb-a07f-4acdd2e4bb2f
+		summarizeBy: sum
+		sourceColumn: Messages_Sent
+
+		annotation SummarizationSetBy = Automatic
+
+	column Quiz_Average_Score
+		dataType: double
+		lineageTag: 39e5d64a-2ddb-4f52-a578-83408c2dfa34
+		summarizeBy: sum
+		sourceColumn: Quiz_Average_Score
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Assignment_Scores
+		dataType: string
+		lineageTag: bcdd05c5-b58b-44fe-b3af-66a1277cddb2
+		summarizeBy: none
+		sourceColumn: Assignment_Scores
+
+		annotation SummarizationSetBy = Automatic
+
+	column Assignment_Average_Score
+		dataType: double
+		lineageTag: bf1d7cea-b5fb-408e-baac-2e2b5d1ab7d1
+		summarizeBy: sum
+		sourceColumn: Assignment_Average_Score
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Project_Score
+		dataType: double
+		lineageTag: c7dcb117-0131-4278-973b-bcaedc89a7ab
+		summarizeBy: sum
+		sourceColumn: Project_Score
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Extra_Credit
+		dataType: double
+		lineageTag: 6e9cce10-3378-4ee9-b98f-c551e32d9c19
+		summarizeBy: sum
+		sourceColumn: Extra_Credit
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Overall_Performance
+		dataType: double
+		lineageTag: 2299daf2-2a2d-485f-8881-badbd52e4ddf
+		summarizeBy: sum
+		sourceColumn: Overall_Performance
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Feedback_Score
+		dataType: double
+		lineageTag: c48813b2-7eb8-456e-9523-48f6c75daf5e
+		summarizeBy: sum
+		sourceColumn: Feedback_Score
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Completion_Time_Days
+		dataType: int64
+		formatString: 0
+		lineageTag: 2c0b42d8-eb2b-4503-af24-92f794d8d21e
+		summarizeBy: sum
+		sourceColumn: Completion_Time_Days
+
+		annotation SummarizationSetBy = Automatic
+
+	column Performance_Score
+		dataType: double
+		lineageTag: 4a8e4ccc-54e4-4be8-a07e-ca1960545b17
+		summarizeBy: sum
+		sourceColumn: Performance_Score
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Course_Completion_Rate
+		dataType: string
+		lineageTag: 3c43c247-7ab0-43e2-864c-2b0029be03bf
+		summarizeBy: none
+		sourceColumn: Course_Completion_Rate
+
+		annotation SummarizationSetBy = Automatic
+
+	column Processing_Date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 59b151e8-44c5-4aa9-bcd9-70db2db4956a
+		summarizeBy: none
+		sourceColumn: Processing_Date
+
+		variation Variation
+			isDefault
+			relationship: b16b6509-40fa-472f-8746-81fe2fb36935
+			defaultHierarchy: LocalDateTable_65a81b4b-5f67-41cd-8f0e-715070ccd911.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	partition fact_student_performance = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("3xnaarkrtkoezcczy6a4lxq45a-2chedwz2htjuzll7bdkhbuidwu.datawarehouse.fabric.microsoft.com", "LH_gold"),
+				    dbo_fact_student_performance = Source{[Schema="dbo",Item="fact_student_performance"]}[Data]
+				in
+				    dbo_fact_student_performance
+
+	annotation PBI_ResultType = Table
+

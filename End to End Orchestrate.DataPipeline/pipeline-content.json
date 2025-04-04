@@ -1,0 +1,141 @@
+{
+  "properties": {
+    "activities": [
+      {
+        "type": "InvokePipeline",
+        "typeProperties": {
+          "parameters": {},
+          "waitOnCompletion": true,
+          "workspaceId": "db418ed0-3c3a-4cd3-ad7f-08d470d103b5",
+          "pipelineId": "39c55c77-c0a8-4a24-8103-e7ea0356ee85",
+          "operationType": "InvokeFabricPipeline"
+        },
+        "externalReferences": {
+          "connection": "a13aeb96-d6c3-41bc-b3fb-51b44666437b"
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Raw to Landing",
+        "state": "Inactive",
+        "onInactiveMarkAs": "Succeeded",
+        "dependsOn": []
+      },
+      {
+        "type": "TridentNotebook",
+        "typeProperties": {
+          "notebookId": "887b2c71-0ee9-9628-444b-5826898654f7",
+          "workspaceId": "00000000-0000-0000-0000-000000000000",
+          "parameters": {
+            "today_date": {
+              "value": "@formatDateTime(utcNow(),'yyyy-MM-dd')",
+              "type": "string"
+            },
+            "workspace": {
+              "value": "fabric_DEVs",
+              "type": "string"
+            },
+            "source_account": {
+              "value": "datalake22143",
+              "type": "string"
+            },
+            "source_container": {
+              "value": "fabricproject",
+              "type": "string"
+            },
+            "src_relative_path": {
+              "value": "landing",
+              "type": "string"
+            }
+          }
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Landing to Bronze",
+        "dependsOn": [
+          {
+            "activity": "Raw to Landing",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "TridentNotebook",
+        "typeProperties": {
+          "notebookId": "2034456a-654e-accf-455c-bcea5504ccd1",
+          "workspaceId": "00000000-0000-0000-0000-000000000000",
+          "parameters": {
+            "today_date": {
+              "value": "@formatDateTime(utcNow(),'yyyy-MM-dd')",
+              "type": "string"
+            },
+            "workspace": {
+              "value": "fabric_DEVs",
+              "type": "string"
+            }
+          }
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Silver Transform",
+        "dependsOn": [
+          {
+            "activity": "Landing to Bronze",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "TridentNotebook",
+        "typeProperties": {
+          "notebookId": "67c0bd33-cadf-81f0-4a94-e90a1a0c1a94",
+          "workspaceId": "00000000-0000-0000-0000-000000000000",
+          "parameters": {
+            "today_date": {
+              "value": "@formatDateTime(utcNow(),'yyyy-MM-dd')",
+              "type": "string"
+            },
+            "workspace": {
+              "value": "fabric_DEVs",
+              "type": "string"
+            }
+          }
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Gold Layer",
+        "dependsOn": [
+          {
+            "activity": "Silver Transform",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

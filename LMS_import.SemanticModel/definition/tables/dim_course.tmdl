@@ -1,0 +1,38 @@
+table dim_course
+	lineageTag: 8989e494-47f6-40ff-9ddd-7d3ae21068b7
+
+	column Course_ID
+		dataType: string
+		lineageTag: c4f9ba88-c228-44a9-8bcd-ed18c35d0ac1
+		summarizeBy: none
+		sourceColumn: Course_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Course_Name
+		dataType: string
+		lineageTag: 12c26ed6-0cc4-4a1c-8f9e-778e5e86e510
+		summarizeBy: none
+		sourceColumn: Course_Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Grade_Level
+		dataType: string
+		lineageTag: 945646c4-529a-4d93-8bd0-dcd8d975368f
+		summarizeBy: none
+		sourceColumn: Grade_Level
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_course = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("3xnaarkrtkoezcczy6a4lxq45a-2chedwz2htjuzll7bdkhbuidwu.datawarehouse.fabric.microsoft.com", "LH_gold"),
+				    dbo_dim_course = Source{[Schema="dbo",Item="dim_course"]}[Data]
+				in
+				    dbo_dim_course
+
+	annotation PBI_ResultType = Table
+

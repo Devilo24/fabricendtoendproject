@@ -1,0 +1,24 @@
+relationship 3ff12cc8-53e8-4a08-be72-6708970ebd0f
+	joinOnDateBehavior: datePartOnly
+	fromColumn: fact_student_performance.Enrollment_Date
+	toColumn: LocalDateTable_e3567986-df95-4ee0-a701-012f5a05c2a3.Date
+
+relationship cb61e231-cb0e-463b-9e7a-99ec7539b863
+	joinOnDateBehavior: datePartOnly
+	fromColumn: fact_student_performance.Completion_Date
+	toColumn: LocalDateTable_1ceab3b2-bfec-4fe5-9cff-5285fa5b7291.Date
+
+relationship b16b6509-40fa-472f-8746-81fe2fb36935
+	joinOnDateBehavior: datePartOnly
+	fromColumn: fact_student_performance.Processing_Date
+	toColumn: LocalDateTable_65a81b4b-5f67-41cd-8f0e-715070ccd911.Date
+
+relationship AutoDetected_c8f602bc-d38f-4c0a-8df4-c110e6368e48
+	fromColumn: fact_student_performance.Course_ID
+	toColumn: dim_course.Course_ID
+
+relationship AutoDetected_a4f737c8-a1c6-4e3a-8dee-f62a712638ca
+	crossFilteringBehavior: bothDirections
+	fromColumn: fact_student_performance.Student_ID
+	toColumn: dim_student.Student_ID
+

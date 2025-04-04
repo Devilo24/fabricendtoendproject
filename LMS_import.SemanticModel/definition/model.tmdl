@@ -1,0 +1,24 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-IN
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation PBI_QueryOrder = ["dim_course","dim_student","fact_student_performance"]
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBIDesktopVersion = 2.141.1253.0 (25.03)+74f9999a1e95f78c739f3ea2b96ba340e9ba8729
+
+ref table dim_course
+ref table dim_student
+ref table fact_student_performance
+ref table DateTableTemplate_515cfa09-7b83-4fee-8de6-f45ac1154cd8
+ref table LocalDateTable_e3567986-df95-4ee0-a701-012f5a05c2a3
+ref table LocalDateTable_1ceab3b2-bfec-4fe5-9cff-5285fa5b7291
+ref table LocalDateTable_65a81b4b-5f67-41cd-8f0e-715070ccd911
+
+ref cultureInfo en-US
+
