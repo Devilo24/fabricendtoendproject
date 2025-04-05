@@ -2,6 +2,7 @@
 This project builds an end-to-end data pipeline in Microsoft Fabric for analyzing Learning Management System (LMS) data. It processes student demographics, course enrollments, learning preferences, and performance metrics using Microsoft Fabric components such as OneLake, Data Factory, Synapse Analytics, and Power BI. Additionally, it includes CI/CD automation for seamless deployment and updates.
 
 📂 Project Structure
+
 ![image](https://github.com/user-attachments/assets/a37c2001-f387-44da-a73d-7ff52bd5feaf)
 
 🚀 Features
