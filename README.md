@@ -2,20 +2,7 @@
 This project builds an end-to-end data pipeline in Microsoft Fabric for analyzing Learning Management System (LMS) data. It processes student demographics, course enrollments, learning preferences, and performance metrics using Microsoft Fabric components such as OneLake, Data Factory, Synapse Analytics, and Power BI. Additionally, it includes CI/CD automation for seamless deployment and updates.
 
 📂 Project Structure
-fabricproject/
-│── 01.Raw to Landing.DataPipeline/       # Data pipeline for raw to landing transformation
-│── 01.Raw to Landing.Notebook/           # Notebook for processing raw data
-│── 02. Landing to Bronze.Notebook/       # Notebook for transforming landing data to bronze
-│── 03. Silver Transform.Notebook/        # Notebook for processing bronze to silver data
-│── 04. Gold Layer.Notebook/              # Notebook for final data transformation to gold
-│── End to End Orchestrate.DataPipeline/  # Orchestrated pipeline covering the full process
-│── LH_Bronze.Lakehouse/                  # Lakehouse for Bronze layer storage
-│── LH_Gold.Lakehouse/                     # Lakehouse for Gold layer storage
-│── LH_Silver.Lakehouse/                   # Lakehouse for Silver layer storage
-│── LMS_import.Report/                     # Report based on LMS data
-│── LMS_import.SemanticModel/              # Semantic model for LMS import
-│── LMS_model.SemanticModel/               # Main LMS semantic model
-│── README.md                              # Project documentation
+![image](https://github.com/user-attachments/assets/a37c2001-f387-44da-a73d-7ff52bd5feaf)
 
 🚀 Features
 ✅ Data Pipeline: Ingests, processes, and transforms LMS data from OneLake
